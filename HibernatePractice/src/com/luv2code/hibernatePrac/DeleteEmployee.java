@@ -32,9 +32,15 @@ public class DeleteEmployee {
 			
 			System.out.println("deleting student=> "+emp);
 			
-			session.delete(emp);
+			//session.delete(emp);
+			
+			//method-2
+			
+			session.createQuery("delete from Employee e where id=4").executeUpdate();
 			
 			session.getTransaction().commit();
+			
+			System.out.println("Done!");
 			
 			
 		}
